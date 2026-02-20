@@ -65,6 +65,7 @@ cards.forEach(card => {
   });
 
 });
+<<<<<<< HEAD
 
 // Reveal on scroll (premium, léger)
 (function(){
@@ -142,3 +143,5 @@ cards.forEach(card => {
   go(0);
   start();
 })();
+=======
+>>>>>>> f939be4a7cd17f0e5ec54c9b0ac8ae26c03fb1c3

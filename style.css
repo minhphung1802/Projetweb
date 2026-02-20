@@ -1191,6 +1191,7 @@ body{
   border-radius:10px;
   text-align:center;
 }
+<<<<<<< HEAD
 
 /* =========================
    EQUIPE (premium)
@@ -1578,3 +1579,5 @@ body{
   .dept-metrics{ grid-template-columns: 1fr; }
   .carousel-slide img{ height:240px; }
 }
+=======
+>>>>>>> f939be4a7cd17f0e5ec54c9b0ac8ae26c03fb1c3
