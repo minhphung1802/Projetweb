@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=963, initial-scale=1.0" />
+  <title>Candidature EFREI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+      <a href="accueil.html" class="brand">
+        <img src="assets/image 1.png" class="brand-logo" alt="Logo EFREI" />
+      </a>
+
+      <div class="nav-actions">
+        <a class="pill" href="about.html">L’école</a>
+        <a class="pill" href="formations.html">Formations</a>
+        <a class="pill" href="campus.html">Campus</a>
+        <a class="pill" href="enseignants.html">Enseignants</a>
+        <a class="pill" href="contact.html">Contact</a>
+        <a class="pill" href="candidature.html">Candidater</a>
+      </div>
+
+      <form class="search" action="recherche.html" method="get" role="search">
+        <input
+          type="search"
+          name="q"
+          placeholder="Recherche"
+          aria-label="Recherche"
+          required
+        />
+        <button type="submit" class="search-btn" aria-label="Lancer la recherche">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10.5 18a7.5 7.5 0 1 1 0-15" stroke="white" stroke-width="2"/>
+            <path d="M16.2 16.2 21 21" stroke="white" stroke-width="2"/>
+          </svg>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <h1 class="h-accent">Dossier de candidature</h1>
+
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <form class="candidature-form" id="form">
+      <h2>Informations personnelles</h2>
+
+      <input type="text" name="nom" placeholder="Nom" required />
+      <input type="text" name="prenom" placeholder="Prénom" required />
+      <input type="text" name="ine" placeholder="INE (Identifiant National Étudiant)" required />
+      <input type="date" name="naissance" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="tel" placeholder="Téléphone" required />
+      <input type="text" name="adresse" placeholder="Adresse" required />
+
+      <h2>Formation souhaitée</h2>
+
+      <select name="formation" required>
+        <option value="">Choisir</option>
+        <option value="pge">Programme Grande École</option>
+        <option value="tn">Technologie &amp; Numérique</option>
+        <option value="dm">Digital &amp; Management</option>
+      </select>
+
+      <select name="campus" required>
+        <option value="">Campus souhaité</option>
+        <option value="paris">Paris</option>
+        <option value="bordeaux">Bordeaux</option>
+      </select>
+
+      <h2>CV</h2>
+      <input type="file" id="cv" name="cv" accept="application/pdf" required />
+      <iframe id="cv-preview" title="Aperçu du CV"></iframe>
+
+      <h2>Lettre de motivation</h2>
+      <input type="file" id="lm" name="lm" accept="application/pdf" required />
+      <iframe id="lm-preview" title="Aperçu de la lettre de motivation"></iframe>
+
+      <button class="pill" type="submit">Soumettre la candidature</button>
+    </form>
+
+    <div class="success-box" id="success">
+      <h2>Candidature envoyée ✓</h2>
+      <p>Votre dossier a bien été enregistré.</p>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  const form = document.getElementById("form");
+  const progress = document.getElementById("progress");
+  const success = document.getElementById("success");
+
+  const cv = document.getElementById("cv");
+  const lm = document.getElementById("lm");
+
+  const cvPreview = document.getElementById("cv-preview");
+  const lmPreview = document.getElementById("lm-preview");
+
+  function updateProgress() {
+    const fields = form.querySelectorAll("input, textarea, select");
+
+    let filled = 0;
+    fields.forEach((el) => {
+      if (el.type === "file") {
+        if (el.files && el.files.length > 0) filled++;
+      } else {
+        if (el.value.trim() !== "") filled++;
+      }
+    });
+
+    progress.style.width = (filled / fields.length * 100) + "%";
+  }
+
+  form.addEventListener("input", updateProgress);
+  form.addEventListener("change", updateProgress);
+
+  cv.addEventListener("change", function () {
+    const file = this.files && this.files[0];
+    if (file) cvPreview.src = URL.createObjectURL(file);
+  });
+
+  lm.addEventListener("change", function () {
+    const file = this.files && this.files[0];
+    if (file) lmPreview.src = URL.createObjectURL(file);
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.style.display = "none";
+    success.style.display = "block";
+  });
+
+  updateProgress();
+</script>
+<script src="bonus.js"></script>
+</body>
+
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div class="footer-logo-block">
+      <img src="assets/image 1.png" class="footer-logo" alt="Logo EFREI">
+      <ul>
+        <li>+33 188 289 000</li>
+        <li>Dernière mise à jour : 2026</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>L’école</h4>
+      <ul>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="campus.html">Campus</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Formations</h4>
+      <ul>
+        <li><a href="formations.html">Voir formations</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="contact.html">Nous contacter</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+</html>

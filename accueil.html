@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EFREI - Accueil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="container">
+
+    <div class="navbar">
+
+      <!-- Logo -->
+      <a class="brand" href="accueil.html">
+        <img class="brand-logo" src="assets/image 1.png" alt="Logo EFREI">
+      </a>
+
+      <!-- Navigation -->
+      <div class="nav-actions">
+        <a class="pill" href="about.html">L’école</a>
+        <a class="pill" href="formations.html">Formations</a>
+        <a class="pill" href="campus.html">Campus</a>
+        <a class="pill" href="enseignants.html">Enseignants</a>
+        <a class="pill" href="contact.html">Contact</a>
+        <a class="pill" href="candidature.html">Candidater</a>
+      </div>
+
+      <!-- Recherche -->
+      <form class="search" action="recherche.html" method="get" role="search">
+
+        <input
+          type="search"
+          name="q"
+          placeholder="Recherche"
+          aria-label="Recherche"
+          required
+        >
+
+        <button type="submit" class="search-btn" aria-label="Rechercher">
+
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M10.5 18a7.5 7.5 0 1 1 0-15" stroke="white" stroke-width="2"/>
+            <path d="M16.2 16.2 21 21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main class="page">
+
+  <div class="container">
+
+
+    <!-- HERO -->
+    <section>
+
+      <img
+        class="hero-diagonal-img"
+        src="assets/Sans titre.png"
+        alt="Bannière EFREI"
+      >
+
+      <div class="hero-subtitle">
+        La Grande École d’ingénieurs généralistes et<br>
+        d’experts du numérique
+      </div>
+
+    </section>
+
+
+
+    <!-- PRESENTATION DU DEPARTEMENT -->
+    <section class="dept">
+
+      <h1 class="dept-title h-accent">
+        Département d’informatique — EFREI
+      </h1>
+
+      <p class="dept-sub">
+        Le département informatique de l’EFREI forme des ingénieurs spécialisés dans les technologies
+        du numérique. Les étudiants développent des compétences en développement web, intelligence artificielle,
+        cybersécurité, data science et systèmes informatiques grâce à une pédagogie basée sur la pratique
+        et les projets concrets.
+      </p>
+
+      <div class="dept-actions">
+        <a class="pill" href="formations.html">Voir les formations</a>
+        <a class="pill pill--ghost" href="candidature.html">Candidater</a>
+      </div>
+
+      <div class="dept-metrics">
+
+        <div class="metric">
+          <div class="metric-n">Développement Web</div>
+          <div class="metric-t">HTML, CSS, JavaScript, PHP</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-n">Cybersécurité & Data</div>
+          <div class="metric-t">Protection, analyse et traitement</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-n">Approche projet</div>
+          <div class="metric-t">Formation pratique et professionnalisante</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CARROUSEL -->
+    <section class="carousel">
+
+      <div class="carousel-top">
+        <h2 class="h-accent">Vie du département</h2>
+        <p class="page-sub">
+          Découvrez l’environnement d’apprentissage et la vie étudiante à l’EFREI.
+        </p>
+      </div>
+
+      <div class="carousel-wrap" data-carousel>
+
+        <button class="carousel-btn carousel-btn--prev" aria-label="Image précédente">
+          ‹
+        </button>
+
+        <div class="carousel-viewport">
+
+          <div class="carousel-track">
+
+            <figure class="carousel-slide">
+              <img src="assets/images.jpg" alt="Vie étudiante EFREI">
+              <figcaption class="carousel-cap">
+                Vie étudiante et projets
+              </figcaption>
+            </figure>
+
+            <figure class="carousel-slide">
+              <img src="assets/Attal.png" alt="Campus EFREI">
+              <figcaption class="carousel-cap">
+                Campus moderne et innovant
+              </figcaption>
+            </figure>
+
+            <figure class="carousel-slide">
+              <img src="assets/image 11.png" alt="Formation informatique">
+              <figcaption class="carousel-cap">
+                Formation informatique de qualité
+              </figcaption>
+            </figure>
+
+          </div>
+
+        </div>
+
+        <button class="carousel-btn carousel-btn--next" aria-label="Image suivante">
+          ›
+        </button>
+
+      </div>
+
+      <div class="carousel-dots">
+        <button class="dot is-active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
+
+    </section>
+
+
+
+    <!-- CAMPUS -->
+    <section class="grid-2">
+
+      <div>
+
+        <div class="lead-title h-accent">
+          Nos campus
+        </div>
+
+        <p class="lorem">
+          L’EFREI dispose de deux campus modernes situés à Paris et Bordeaux.
+          Ils offrent un environnement propice à l’apprentissage avec des infrastructures
+          adaptées aux besoins des étudiants et aux technologies actuelles.
+        </p>
+
+      </div>
+
+      <div>
+
+        <img class="vs-image" src="assets/Attal.png" alt="Campus EFREI">
+
+        <div class="campus-links">
+
+          <a href="https://www.efrei.fr/campus-paris/" class="campus-link">
+            <span class="campus-icon">📍</span>
+            Campus de Paris
+          </a>
+
+          <a href="https://www.efrei.fr/campus-bordeaux/" class="campus-link">
+            <span class="campus-icon">📍</span>
+            Campus de Bordeaux
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+      <div class="footer-grid">
+
+        <div class="footer-logo-block">
+
+          <img
+            src="assets/image 1.png"
+            class="footer-logo"
+            alt="Logo EFREI"
+          >
+
+          <ul>
+
+            <li>+33 188 289 000</li>
+
+            <li class="update">Dernière mise à jour</li>
+            <li>10/02/2026</li>
+
+            <li class="update">
+              Projet réalisé par
+              <a href="equipe.html" style="color:var(--accent); font-weight:700;">
+                Sean MOY et Duy Minh PHUNG
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div>
+          <h4>L’école</h4>
+          <ul>
+            <li>Campus</li>
+            <li>Pédagogie</li>
+            <li>Certifications</li>
+            <li>International</li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h4>Admissions</h4>
+          <ul>
+            <li>admissions@efrei.net</li>
+            <li>Parcoursup</li>
+            <li>Programmes</li>
+            <li>Candidats internationaux</li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h4>Contacts</h4>
+          <ul>
+            <li>Contactez-nous</li>
+            <li>FAQ</li>
+            <li>Rdv personnalisés</li>
+            <li>Espace presse</li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <div class="watermark">
+        <img
+          class="footer-watermark-img"
+          src="assets/image 10.png"
+          alt="EFREI watermark"
+        >
+      </div>
+
+    </footer>
+
+
+  </div>
+
+</main>
+
+<script src="bonus.js"></script>
+
+</body>
+</html>

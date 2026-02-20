@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EFREI - Équipe projet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+
+      <!-- Logo -->
+      <a class="brand" href="accueil.html">
+        <img class="brand-logo" src="assets/image 1.png" alt="Logo EFREI">
+      </a>
+
+      <!-- Navigation -->
+      <div class="nav-actions">
+        <a class="pill" href="about.html">L’école</a>
+        <a class="pill" href="formations.html">Formations</a>
+        <a class="pill" href="campus.html">Campus</a>
+        <a class="pill" href="enseignants.html">Enseignants</a>
+        <a class="pill" href="contact.html">Contact</a>
+        <a class="pill" href="candidature.html">Candidater</a>
+      </div>
+
+      <!-- Recherche -->
+      <form class="search" action="recherche.html" method="get" role="search">
+        <input
+          type="search"
+          name="q"
+          placeholder="Recherche"
+          aria-label="Recherche"
+          required
+        >
+        <button type="submit" class="search-btn" aria-label="Rechercher">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10.5 18a7.5 7.5 0 1 1 0-15" stroke="white" stroke-width="2"/>
+            <path d="M16.2 16.2 21 21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</header>
+
+
+<main class="page">
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="team-hero">
+
+      <div class="team-hero__left">
+        <div class="team-kicker">XTI205-DEV • Projet site vitrine</div>
+
+        <h1 class="team-title h-accent">L’équipe projet</h1>
+
+        <p class="team-sub">
+          Projet réalisé en binôme dans le cadre du module XTI205-DEV.
+          Nous avons conjointement conçu et développé un site vitrine moderne,
+          interactif et responsive pour le département informatique de l’EFREI,
+          en utilisant HTML, CSS, JavaScript et PHP.
+        </p>
+
+        <div class="team-actions">
+          <a class="pill" href="contact.html">Nous contacter</a>
+          <a class="pill pill--ghost" href="accueil.html">Retour accueil</a>
+        </div>
+
+        <div class="team-badges">
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Responsive</span>
+          <span class="chip">UI/UX</span>
+        </div>
+      </div>
+
+
+      <div class="team-hero__right">
+        <div class="team-glass">
+          <div class="team-glass__title">Objectifs du projet</div>
+          <ul class="team-list">
+            <li>Créer un site vitrine clair et structuré</li>
+            <li>Développer une interface moderne et responsive</li>
+            <li>Implémenter des fonctionnalités interactives en JavaScript</li>
+            <li>Concevoir une navigation intuitive</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- MAQUETTE / WIREFRAME -->
+    <section class="team-section">
+
+      <h2 class="team-h2 h-accent">Maquette &amp; conception</h2>
+
+      <p class="team-p">
+        Avant de commencer le développement, nous avons conçu une maquette (wireframe) afin de définir
+        l’arborescence du site, la structure des pages, la charte graphique et l’expérience utilisateur.
+        Cette étape nous a permis d’avoir une base claire pour l’intégration HTML/CSS et l’ajout des interactions JavaScript.
+      </p>
+
+      <div class="team-grid">
+
+        <article class="profile-card reveal">
+          <div class="profile-block" style="margin-top:0;">
+            <div class="profile-label">Contenu de la maquette</div>
+            <ul class="profile-bullets">
+              <li>Plan du site (arborescence sur 2 niveaux)</li>
+              <li>Placement des sections (header, navigation, contenu, footer)</li>
+              <li>Composants UI (cards, boutons “pill”, barre de recherche)</li>
+              <li>Choix typographie, couleurs, espacements, responsive</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="profile-card reveal">
+          <div class="profile-block" style="margin-top:0;">
+            <div class="profile-label">Outils &amp; livrable</div>
+            <ul class="profile-bullets">
+              <li>Wireframe réalisé sur : Figma</li>
+              <li>Livrable : image/PDF de la maquette ou lien Figma</li>
+              <li>Charte graphique cohérente sur toutes les pages</li>
+              <li>Conformité : pages validables W3C + design responsive</li>
+            </ul>
+
+            <!-- Optionnel : si tu as un fichier ou un lien -->
+            <!--
+            <div style="margin-top:12px;">
+              <a class="mini-link" href="assets/maquette.pdf" target="_blank" rel="noopener noreferrer">
+                Voir la maquette (PDF)
+              </a>
+            </div>
+            -->
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- MEMBRES -->
+    <section class="team-section">
+
+      <h2 class="team-h2 h-accent">Membres de l’équipe</h2>
+
+      <p class="team-p">
+        Le projet a été réalisé en binôme avec une répartition équitable des tâches :
+        conception, intégration, contenu et fonctionnalités ont été développés conjointement.
+      </p>
+
+      <div class="team-grid">
+
+        <!-- SEAN -->
+        <article class="profile-card reveal">
+
+          <div class="profile-top">
+            <div class="profile-avatar"><span>MS</span></div>
+
+            <div class="profile-id">
+              <div class="profile-name">MOY Sean</div>
+              <div class="profile-role">Développeur Web</div>
+            </div>
+
+            <span class="badge badge--paris">Binôme</span>
+          </div>
+
+          <div class="profile-block">
+            <div class="profile-label">Contributions</div>
+            <ul class="profile-bullets">
+              <li>Conception et intégration HTML / CSS</li>
+              <li>Développement des pages principales du site</li>
+              <li>Implémentation des fonctionnalités JavaScript</li>
+              <li>Conception de la maquette</li>
+            </ul>
+          </div>
+
+          <div class="profile-block">
+            <div class="profile-label">Compétences</div>
+            <div class="skill-row">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Responsive</span>
+            </div>
+          </div>
+
+          <div class="profile-links">
+            <a
+              class="mini-link"
+              href="https://github.com/sean97354"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a class="mini-link" href="mailto:sean.moy@efrei.net">
+              Email
+            </a>
+          </div>
+
+        </article>
+
+
+        <!-- DUY MINH -->
+        <article class="profile-card reveal">
+
+          <div class="profile-top">
+            <div class="profile-avatar"><span>PM</span></div>
+
+            <div class="profile-id">
+              <div class="profile-name">PHUNG Duy Minh</div>
+              <div class="profile-role">Développeur Web</div>
+            </div>
+
+            <span class="badge badge--bordeaux">Binôme</span>
+          </div>
+
+          <div class="profile-block">
+            <div class="profile-label">Contributions</div>
+            <ul class="profile-bullets">
+              <li>Conception de la maquette</li>
+              <li>Conception et intégration HTML / CSS</li>
+              <li>Développement des pages principales du site</li>
+              <li>Implémentation des fonctionnalités JavaScript</li>
+            </ul>
+          </div>
+
+          <div class="profile-block">
+            <div class="profile-label">Compétences</div>
+            <div class="skill-row">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Responsive</span>
+            </div>
+          </div>
+
+          <div class="profile-links">
+            <a
+              class="mini-link"
+              href="https://github.com/minhphung1802"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a class="mini-link" href="mailto:duy.phung@efrei.net">
+              Email
+            </a>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section class="team-section">
+      <h2 class="team-h2 h-accent">Timeline</h2>
+      <p class="team-p">
+        Une chronologie simple pour illustrer l’organisation du projet.
+      </p>
+
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-title">S1 — Wireframe + structure</div>
+            <div class="tl-text">Arborescence, sections, charte graphique, header/footer.</div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-title">S2 — Pages & contenu</div>
+            <div class="tl-text">Intégration des pages + contenu (formations, campus, etc.).</div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-title">S3 — Interactions</div>
+            <div class="tl-text">Recherche, filtres, formulaires, micro-animations JS.</div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-title">S4 — Finitions</div>
+            <div class="tl-text">Responsive, accessibilité, optimisation, validation.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA FINAL -->
+    <section class="team-cta reveal">
+      <div class="team-cta__title">On est prêts.</div>
+      <div class="team-cta__text">
+        Un binôme solide, un site clair, des fonctionnalités utiles — et une présentation premium.
+      </div>
+      <div class="team-actions" style="margin-top:12px;">
+        <a class="pill" href="formations.html">Voir les formations</a>
+        <a class="pill pill--ghost" href="contact.html">Nous écrire</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="bonus.js"></script>
+</body>
+</html>
