@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=963, initial-scale=1.0">
+  <title>EFREI - Équipe enseignante</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+
+      <a class="brand" href="accueil.html">
+        <img src="assets/image 1.png" class="brand-logo" alt="EFREI">
+      </a>
+
+      <div class="nav-actions">
+        <a class="pill" href="about.html">L’école</a>
+        <a class="pill" href="formations.html">Formations</a>
+        <a class="pill" href="campus.html">Campus</a>
+        <a class="pill" href="contact.html">Contacts</a>
+        <a class="pill" href="candidature.html">Candidater</a>
+<form class="search" action="recherche.html" method="get">
+
+  <input
+    type="search"
+    name="q"
+    placeholder="Recherche"
+    aria-label="Recherche"
+    required
+  >
+
+  <button type="submit" class="search-btn">
+
+    <svg width="16" height="16" viewBox="0 0 24 24">
+      <path d="M10.5 18a7.5 7.5 0 1 1 0-15" stroke="white" stroke-width="2"/>
+      <path d="M16.2 16.2 21 21" stroke="white" stroke-width="2"/>
+    </svg>
+
+  </button>
+
+</form>
+
+        
+</form>
+
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <div class="page-head">
+      <h1 class="h-accent">Équipe enseignante</h1>
+      <p class="page-sub">
+        Recherchez un enseignant, filtrez par matière et consultez les permanences.
+      </p>
+    </div>
+
+    <section class="tools-row">
+      <div class="tool">
+        <label for="q">Recherche</label>
+        <input id="q" type="text" placeholder="Nom, matière, campus…">
+      </div>
+
+      <div class="tool">
+        <label for="matiere">Matière</label>
+        <select id="matiere">
+          <option value="">Toutes</option>
+          <option>Développement web</option>
+          <option>Data</option>
+          <option>Cybersécurité</option>
+          <option>IA</option>
+          <option>Maths</option>
+          <option>Réseaux</option>
+        </select>
+      </div>
+
+      <div class="tool">
+        <label for="campus">Campus</label>
+        <select id="campus">
+          <option value="">Tous</option>
+          <option>Paris</option>
+          <option>Bordeaux</option>
+        </select>
+      </div>
+
+      <div class="tool tool--btn">
+        <button id="reset" class="pill pill--ghost" type="button">Réinitialiser</button>
+      </div>
+    </section>
+
+    <section class="teachers-layout">
+
+      <div>
+        <div class="teachers-grid" id="teachersGrid"></div>
+      </div>
+
+      <aside class="sidebar">
+        <h2 class="sidebar-title">Permanences</h2>
+        <p class="sidebar-sub">Cliquez sur un enseignant pour voir ses créneaux.</p>
+
+        <div class="slots" id="slots">
+          <div class="slot-empty">Sélectionnez un enseignant dans la liste.</div>
+        </div>
+
+        <div class="legend">
+          <div><span class="dot dot--paris"></span> Paris</div>
+          <div><span class="dot dot--bordeaux"></span> Bordeaux</div>
+          <div><span class="dot dot--online"></span> Distanciel</div>
+        </div>
+      </aside>
+
+    </section>
+
+  </div>
+</main>
+
+<script>
+const teachers = [
+  {
+    id: "t1",
+    nom: "Mme Dubois",
+    matiere: "Développement web",
+    campus: "Paris",
+    bureau: "Bât. A - 2e étage",
+    mail: "dubois@efrei.net",
+    dispo: [
+      {jour:"Lundi", heure:"14:00 - 16:00", mode:"Paris"},
+      {jour:"Mercredi", heure:"10:00 - 11:30", mode:"Online"}
+    ]
+  },
+  {
+    id: "t2",
+    nom: "M. Martin",
+    matiere: "Data",
+    campus: "Bordeaux",
+    bureau: "Bât. C - 1er étage",
+    mail: "martin@efrei.net",
+    dispo: [
+      {jour:"Mardi", heure:"09:00 - 10:30", mode:"Bordeaux"},
+      {jour:"Jeudi", heure:"15:00 - 17:00", mode:"Bordeaux"}
+    ]
+  },
+  {
+    id: "t3",
+    nom: "Mme Nguyen",
+    matiere: "Cybersécurité",
+    campus: "Paris",
+    bureau: "Bât. B - 3e étage",
+    mail: "nguyen@efrei.net",
+    dispo: [
+      {jour:"Jeudi", heure:"11:00 - 12:00", mode:"Paris"},
+      {jour:"Vendredi", heure:"16:00 - 17:00", mode:"Online"}
+    ]
+  },
+  {
+    id: "t4",
+    nom: "M. Lefèvre",
+    matiere: "IA",
+    campus: "Bordeaux",
+    bureau: "Bât. D - RDC",
+    mail: "lefevre@efrei.net",
+    dispo: [
+      {jour:"Lundi", heure:"10:00 - 12:00", mode:"Online"},
+      {jour:"Mercredi", heure:"14:00 - 15:30", mode:"Bordeaux"}
+    ]
+  },
+  {
+    id: "t5",
+    nom: "Mme Rossi",
+    matiere: "Maths",
+    campus: "Paris",
+    bureau: "Bât. A - 1er étage",
+    mail: "rossi@efrei.net",
+    dispo: [
+      {jour:"Mardi", heure:"13:00 - 14:00", mode:"Paris"},
+      {jour:"Vendredi", heure:"09:00 - 10:00", mode:"Paris"}
+    ]
+  },
+  {
+    id: "t6",
+    nom: "M. Bernard",
+    matiere: "Réseaux",
+    campus: "Bordeaux",
+    bureau: "Bât. C - 2e étage",
+    mail: "bernard@efrei.net",
+    dispo: [
+      {jour:"Mercredi", heure:"09:00 - 10:00", mode:"Bordeaux"},
+      {jour:"Jeudi", heure:"09:30 - 10:30", mode:"Online"}
+    ]
+  }
+];
+
+const elGrid = document.getElementById("teachersGrid");
+const elSlots = document.getElementById("slots");
+
+const q = document.getElementById("q");
+const matiere = document.getElementById("matiere");
+const campus = document.getElementById("campus");
+const resetBtn = document.getElementById("reset");
+
+let selectedId = null;
+
+function badgeClass(c){
+  if(c === "Paris") return "badge badge--paris";
+  if(c === "Bordeaux") return "badge badge--bordeaux";
+  return "badge badge--online";
+}
+
+function renderSlots(t){
+  if(!t){
+    elSlots.innerHTML = '<div class="slot-empty">Sélectionnez un enseignant dans la liste.</div>';
+    return;
+  }
+  const rows = t.dispo.map(d => `
+    <div class="slot">
+      <div class="slot-top">
+        <div class="slot-day">${d.jour}</div>
+        <div class="${badgeClass(d.mode)}">${d.mode}</div>
+      </div>
+      <div class="slot-hour">${d.heure}</div>
+    </div>
+  `).join("");
+
+  elSlots.innerHTML = `
+    <div class="slots-head">
+      <div class="slots-name">${t.nom}</div>
+      <div class="slots-meta">${t.matiere} · ${t.campus}</div>
+      <a class="slots-mail" href="mailto:${t.mail}">${t.mail}</a>
+      <div class="slots-office">${t.bureau}</div>
+    </div>
+    <div class="slots-list">${rows}</div>
+  `;
+}
+
+function matchesFilters(t){
+  const text = (t.nom + " " + t.matiere + " " + t.campus).toLowerCase();
+  const qv = q.value.trim().toLowerCase();
+  if(qv && !text.includes(qv)) return false;
+  if(matiere.value && t.matiere !== matiere.value) return false;
+  if(campus.value && t.campus !== campus.value) return false;
+  return true;
+}
+
+function render(){
+  const list = teachers.filter(matchesFilters);
+
+  elGrid.innerHTML = list.map(t => `
+    <button class="teacher-card ${selectedId === t.id ? "is-active" : ""}" data-id="${t.id}" type="button">
+      <div class="teacher-top">
+        <div class="teacher-name">${t.nom}</div>
+        <div class="badge ${t.campus === "Paris" ? "badge--paris" : "badge--bordeaux"}">${t.campus}</div>
+      </div>
+      <div class="teacher-sub">${t.matiere}</div>
+      <div class="teacher-meta">${t.bureau}</div>
+      <div class="teacher-mail">${t.mail}</div>
+    </button>
+  `).join("");
+
+  // si le sélectionné n'est plus visible, on le reset
+  if(selectedId && !list.some(x => x.id === selectedId)){
+    selectedId = null;
+    renderSlots(null);
+  }
+}
+
+elGrid.addEventListener("click", (e) => {
+  const btn = e.target.closest(".teacher-card");
+  if(!btn) return;
+  selectedId = btn.dataset.id;
+  const t = teachers.find(x => x.id === selectedId);
+  render();
+  renderSlots(t);
+});
+
+[q, matiere, campus].forEach(el => el.addEventListener("input", render));
+resetBtn.addEventListener("click", () => {
+  q.value = "";
+  matiere.value = "";
+  campus.value = "";
+  selectedId = null;
+  renderSlots(null);
+  render();
+});
+
+render();
+</script>
+<script src="bonus.js"></script>
+</body>
+
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div class="footer-logo-block">
+      <img src="assets/image 1.png" class="footer-logo" alt="Logo EFREI">
+      <ul>
+        <li>+33 188 289 000</li>
+        <li>Dernière mise à jour : 2026</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>L’école</h4>
+      <ul>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="campus.html">Campus</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Formations</h4>
+      <ul>
+        <li><a href="formations.html">Voir formations</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="contact.html">Nous contacter</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+</html>

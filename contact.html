@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=963, initial-scale=1.0">
+
+<title>Contact - Efrei</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="header">
+
+  <div class="container">
+
+    <div class="navbar">
+
+      <a class="brand" href="accueil.html">
+        <img
+          class="brand-logo"
+          src="assets/image 1.png"
+          alt="Logo EFREI"
+        >
+      </a>
+
+      <div class="nav-actions">
+
+        <a class="pill" href="about.html">L’école</a>
+        <a class="pill" href="formations.html">Formations</a>
+        <a class="pill" href="campus.html">Campus</a>
+        <a class="pill" href="enseignants.html">Enseignants</a>
+        <a class="pill" href="candidature.html">Candidater</a>
+
+      </div>
+
+      <form
+        class="search"
+        action="recherche.html"
+        method="get"
+        role="search"
+      >
+
+        <input
+          type="search"
+          name="q"
+          placeholder="Recherche"
+          aria-label="Recherche"
+          required
+        >
+
+        <button
+          type="submit"
+          class="search-btn"
+          aria-label="Lancer la recherche"
+        >
+
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+
+            <path
+              d="M10.5 18a7.5 7.5 0 1 1 0-15"
+              stroke="white"
+              stroke-width="2"
+            />
+
+            <path
+              d="M16.2 16.2 21 21"
+              stroke="white"
+              stroke-width="2"
+            />
+
+          </svg>
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main class="page">
+
+  <div class="container">
+
+    <h1 class="h-accent">
+      Contactez-nous
+    </h1>
+
+
+    <form class="candidature-form" id="form" action="candidature.php" method="post" enctype="multipart/form-data">
+
+      <label for="nom">Nom</label>
+      <input id="nom" name="nom" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="sujet">Sujet</label>
+      <input id="sujet" name="sujet" type="text" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button
+        type="submit"
+        class="pill"
+      >
+        Envoyer
+      </button>
+
+    </form>
+
+
+    <p
+      id="success-message"
+      style="display:none; color:#43bfe9; margin-top:12px;"
+    >
+      Message envoyé avec succès !
+    </p>
+
+
+  </div>
+
+</main>
+
+
+<script>
+
+const form = document.getElementById("contact-form")
+const success = document.getElementById("success-message")
+
+form.addEventListener("submit", function(e){
+
+  e.preventDefault()
+
+  success.style.display = "block"
+
+  form.reset()
+
+})
+
+</script>
+
+<script src="bonus.js"></script>
+</body>
+
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div class="footer-logo-block">
+      <img src="assets/image 1.png" class="footer-logo" alt="Logo EFREI">
+      <ul>
+        <li>+33 188 289 000</li>
+        <li>Dernière mise à jour : 2026</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>L’école</h4>
+      <ul>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="campus.html">Campus</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Formations</h4>
+      <ul>
+        <li><a href="formations.html">Voir formations</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="contact.html">Nous contacter</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+</html>

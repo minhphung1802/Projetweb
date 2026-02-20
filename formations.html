@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=963, initial-scale=1.0">
+  <title>EFREI - Formations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+
+      <!-- LOGO -->
+      <a href="accueil.html" class="brand">
+        <img src="assets/image 1.png" class="brand-logo" alt="Logo EFREI">
+      </a>
+
+      <div class="nav-actions">
+        <a class="pill" href="about.html">L’école</a>
+        <a class="pill" href="campus.html">Campus</a>
+        <a class="pill" href="enseignants.html">Enseignants</a>
+        <a class="pill" href="contact.html">Contact</a>
+        <a class="pill" href="candidature.html">Candidater</a>
+      </div>
+
+      <form class="search" action="recherche.html" method="get" role="search">
+        <input
+          type="search"
+          name="q"
+          placeholder="Recherche"
+          aria-label="Recherche"
+          required
+        >
+        <button type="submit" class="search-btn" aria-label="Lancer la recherche">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10.5 18a7.5 7.5 0 1 1 0-15" stroke="white" stroke-width="2"/>
+            <path d="M16.2 16.2 21 21" stroke="white" stroke-width="2"/>
+          </svg>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</header>
+
+
+<!-- ================= PAGE ================= -->
+<main class="page">
+  <div class="container">
+
+    <!-- ================= SECTION FORMATIONS ================= -->
+    <section class="formations-section">
+
+      <h1 class="h-accent">Nos formations</h1>
+
+      <p class="formations-intro">
+        L’Efrei propose des programmes adaptés aux besoins du numérique moderne,
+        permettant aux étudiants de devenir des experts recherchés dans les domaines
+        de l’ingénierie, du développement, de la data et de la cybersécurité.
+      </p>
+
+      <!-- ================= FORMATION 1 ================= -->
+      <div class="formation-card" id="ge">
+        <h2>Programme Grande École</h2>
+
+        <p>
+          Formation d’ingénieur en 5 ans permettant d’acquérir des compétences solides
+          en informatique, cybersécurité, intelligence artificielle et systèmes numériques.
+        </p>
+
+        <div class="formation-info">
+          <span>Bac +5</span>
+          <span>Durée : 5 ans</span>
+          <span>Campus : Paris &amp; Bordeaux</span>
+        </div>
+
+        <div class="formation-jobs">
+          <span>Ingénieur logiciel</span>
+          <span>Expert cybersécurité</span>
+          <span>Architecte systèmes</span>
+        </div>
+
+        <a href="#ge" class="pill">Voir détails</a>
+      </div>
+
+      <!-- ================= FORMATION 2 ================= -->
+      <div class="formation-card" id="tn">
+        <h2>Technologie &amp; Numérique</h2>
+
+        <p>
+          Programme orienté développement web, data science, cloud computing et intelligence artificielle,
+          avec des projets concrets et immersifs.
+        </p>
+
+        <div class="formation-info">
+          <span>Bac +3 / Bac +5</span>
+          <span>Alternance possible</span>
+          <span>Campus : Paris &amp; Bordeaux</span>
+        </div>
+
+        <div class="formation-jobs">
+          <span>Développeur</span>
+          <span>Data Analyst</span>
+          <span>DevOps</span>
+        </div>
+
+        <a href="#tn" class="pill">Voir détails</a>
+      </div>
+
+      <!-- ================= FORMATION 3 ================= -->
+      <div class="formation-card" id="dm">
+        <h2>Digital &amp; Management</h2>
+
+        <p>
+          Formation combinant informatique et management pour préparer aux métiers
+          de la transformation numérique et de la gestion de projets innovants.
+        </p>
+
+        <div class="formation-info">
+          <span>Bac +5</span>
+          <span>Durée : 2 ans</span>
+          <span>Campus : Paris</span>
+        </div>
+
+        <div class="formation-jobs">
+          <span>Chef de projet digital</span>
+          <span>Product Manager</span>
+          <span>Consultant IT</span>
+        </div>
+
+        <a href="#dm" class="pill">Voir détails</a>
+      </div>
+
+      <!-- ================= FORMATION 4 ================= -->
+      <div class="formation-card" id="exec">
+        <h2>Executive Education</h2>
+
+        <p>
+          Formations courtes destinées aux professionnels souhaitant renforcer leurs
+          compétences numériques, se reconvertir ou évoluer dans leur carrière.
+        </p>
+
+        <div class="formation-info">
+          <span>Professionnels</span>
+          <span>Certifications</span>
+          <span>Courte durée</span>
+        </div>
+
+        <div class="formation-jobs">
+          <span>Responsable IT</span>
+          <span>Consultant</span>
+          <span>Manager technique</span>
+        </div>
+
+        <a href="#exec" class="pill">Voir détails</a>
+      </div>
+
+    </section>
+
+
+    <!-- ================= ORIENTATION ================= -->
+    <section class="orient-card" id="orientation">
+      <h2 class="orient-title">Besoin d’aide pour votre orientation ?</h2>
+      <p class="orient-sub">
+        Répondez à 3 questions : on vous propose la formation la plus adaptée et on vous y emmène directement.
+      </p>
+
+      <div class="orient-grid">
+
+        <div class="field">
+          <label>Votre objectif principal</label>
+          <select id="o_objectif">
+            <option value="">Choisir</option>
+            <option value="tech">Je veux coder / construire des projets</option>
+            <option value="data">Je veux faire de la data / IA</option>
+            <option value="cyber">Je veux aller vers la cybersécurité</option>
+            <option value="biz">Je veux manager / piloter des produits digitaux</option>
+            <option value="pro">Je suis déjà pro (formation courte)</option>
+          </select>
+          <div class="error" id="e_objectif"></div>
+        </div>
+
+        <div class="field">
+          <label>Votre niveau actuel</label>
+          <select id="o_niveau">
+            <option value="">Choisir</option>
+            <option value="bac">Bac / Terminale</option>
+            <option value="bac2">Bac+1 / Bac+2</option>
+            <option value="bac3">Bac+3 ou +</option>
+            <option value="pro">Professionnel</option>
+          </select>
+          <div class="error" id="e_niveau"></div>
+        </div>
+
+        <div class="field">
+          <label>Votre préférence</label>
+          <select id="o_pref">
+            <option value="">Choisir</option>
+            <option value="long">Je veux un parcours complet</option>
+            <option value="alt">Je veux une alternance si possible</option>
+            <option value="rapide">Je veux me former rapidement</option>
+          </select>
+          <div class="error" id="e_pref"></div>
+        </div>
+
+      </div>
+
+      <div class="orient-actions">
+        <button type="button" class="pill" id="o_go">Obtenir une recommandation</button>
+        <button type="button" class="pill pill--ghost" id="o_reset">Réinitialiser</button>
+      </div>
+
+      <div class="orient-result" id="o_result" aria-live="polite"></div>
+    </section>
+
+  </div>
+</main>
+
+
+<script>
+  const objectif = document.getElementById("o_objectif");
+  const niveau = document.getElementById("o_niveau");
+  const pref = document.getElementById("o_pref");
+
+  const eObj = document.getElementById("e_objectif");
+  const eNiv = document.getElementById("e_niveau");
+  const ePref = document.getElementById("e_pref");
+
+  const btnGo = document.getElementById("o_go");
+  const btnReset = document.getElementById("o_reset");
+  const result = document.getElementById("o_result");
+
+  function clearErrors(){
+    eObj.textContent = "";
+    eNiv.textContent = "";
+    ePref.textContent = "";
+  }
+
+  function validate(){
+    clearErrors();
+    let ok = true;
+    if(!objectif.value){ eObj.textContent = "Choisissez un objectif."; ok = false; }
+    if(!niveau.value){ eNiv.textContent = "Choisissez un niveau."; ok = false; }
+    if(!pref.value){ ePref.textContent = "Choisissez une préférence."; ok = false; }
+    return ok;
+  }
+
+  function recommend(){
+    if(objectif.value === "pro" || pref.value === "rapide" || niveau.value === "pro"){
+      return { id: "exec", label: "Executive Education", why: "Vous cherchez une montée en compétences rapide (format pro / court)." };
+    }
+    if(objectif.value === "biz"){
+      return { id: "dm", label: "Digital & Management", why: "Vous voulez piloter des projets/produits digitaux et manager." };
+    }
+    if(objectif.value === "cyber"){
+      if(niveau.value === "bac") return { id: "ge", label: "Programme Grande École", why: "Parcours complet Bac+5 avec spécialisation possible en cybersécurité." };
+      return { id: "tn", label: "Technologie & Numérique", why: "Parcours très orienté compétences tech, adapté si vous avez déjà un niveau post-bac." };
+    }
+    if(objectif.value === "data"){
+      if(niveau.value === "bac") return { id: "ge", label: "Programme Grande École", why: "Parcours complet pour construire des bases solides et aller vers data/IA." };
+      return { id: "tn", label: "Technologie & Numérique", why: "Approche pratique idéale pour data/IA avec projets." };
+    }
+    if(objectif.value === "tech"){
+      if(pref.value === "alt") return { id: "tn", label: "Technologie & Numérique", why: "Souvent le plus compatible avec une recherche d’alternance et des projets concrets." };
+      return { id: "ge", label: "Programme Grande École", why: "Parcours complet pour devenir ingénieur avec bases solides + spécialisation." };
+    }
+    return { id: "ge", label: "Programme Grande École", why: "Parcours complet et polyvalent." };
+  }
+
+  btnGo.addEventListener("click", () => {
+    if(!validate()) return;
+
+    const r = recommend();
+    result.innerHTML = `
+      <div class="result-box">
+        <div class="result-title">Recommandation : <span class="h-accent">${r.label}</span></div>
+        <div class="result-why">${r.why}</div>
+        <a class="pill" href="#${r.id}" style="margin-top:10px;">Voir la section</a>
+      </div>
+    `;
+
+    const target = document.getElementById(r.id);
+    if(target){
+      target.scrollIntoView({ behavior:"smooth", block:"start" });
+    }
+  });
+
+  btnReset.addEventListener("click", () => {
+    objectif.value = "";
+    niveau.value = "";
+    pref.value = "";
+    clearErrors();
+    result.textContent = "";
+  });
+</script>
+<script src="bonus.js"></script>
+</body>
+
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div class="footer-logo-block">
+      <img src="assets/image 1.png" class="footer-logo" alt="Logo EFREI">
+      <ul>
+        <li>+33 188 289 000</li>
+        <li>Dernière mise à jour : 2026</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>L’école</h4>
+      <ul>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="campus.html">Campus</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Formations</h4>
+      <ul>
+        <li><a href="formations.html">Voir formations</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="contact.html">Nous contacter</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+</html>
