@@ -1,90 +1,134 @@
-// BONUS 1 — Animation header au scroll
-window.addEventListener("scroll", function(){
+// =========================
+// BONUS 1 — Header animation au scroll
+// =========================
+(function(){
 
   const header = document.querySelector(".header");
+  if(!header) return;
 
-  if(window.scrollY > 50){
-    header.style.background = "#1e1e24";
-    header.style.transition = "0.3s";
-  }
-  else{
-    header.style.background = "transparent";
-  }
+  window.addEventListener("scroll", () => {
 
-});
+    if(window.scrollY > 50){
+      header.style.background = "#1e1e24";
+      header.style.transition = "background 0.3s ease";
+    }
+    else{
+      header.style.background = "transparent";
+    }
+
+  });
+
+})();
 
 
+
+// =========================
 // BONUS 2 — Bouton retour en haut
-const btn = document.createElement("button");
-
-btn.textContent = "↑";
-btn.style.position = "fixed";
-btn.style.bottom = "20px";
-btn.style.right = "20px";
-btn.style.padding = "10px";
-btn.style.borderRadius = "50%";
-btn.style.border = "none";
-btn.style.cursor = "pointer";
-btn.style.display = "none";
-
-document.body.appendChild(btn);
-
-window.addEventListener("scroll", function(){
-
-  if(window.scrollY > 300){
-    btn.style.display = "block";
-  }
-  else{
-    btn.style.display = "none";
-  }
-
-});
-
-btn.addEventListener("click", function(){
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-});
-
-
-// BONUS 3 — Animation au hover des cards
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card => {
-
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "scale(1.05)";
-    card.style.transition = "0.3s";
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "scale(1)";
-  });
-
-});
-<<<<<<< HEAD
-
-// Reveal on scroll (premium, léger)
+// =========================
 (function(){
+
+  const btn = document.createElement("button");
+
+  btn.textContent = "↑";
+
+  btn.style.position = "fixed";
+  btn.style.bottom = "20px";
+  btn.style.right = "20px";
+  btn.style.width = "40px";
+  btn.style.height = "40px";
+  btn.style.borderRadius = "50%";
+  btn.style.border = "none";
+  btn.style.background = "#43bfe9";
+  btn.style.color = "#fff";
+  btn.style.fontSize = "18px";
+  btn.style.cursor = "pointer";
+  btn.style.display = "none";
+  btn.style.zIndex = "999";
+  btn.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
+
+  document.body.appendChild(btn);
+
+  window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 300){
+      btn.style.display = "block";
+    }
+    else{
+      btn.style.display = "none";
+    }
+
+  });
+
+  btn.addEventListener("click", () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+})();
+
+
+
+// =========================
+// BONUS 3 — Hover animation cards
+// =========================
+(function(){
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+
+    card.style.transition = "transform 0.3s ease";
+
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "scale(1.05)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "scale(1)";
+    });
+
+  });
+
+})();
+
+
+
+// =========================
+// BONUS 4 — Reveal animation
+// =========================
+(function(){
+
   const els = document.querySelectorAll(".reveal");
   if(!els.length) return;
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting) e.target.classList.add("is-in");
-    });
-  }, { threshold: 0.12 });
+  const observer = new IntersectionObserver((entries) => {
 
-  els.forEach(el => io.observe(el));
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-in");
+        observer.unobserve(entry.target);
+      }
+
+    });
+
+  }, { threshold: 0.15 });
+
+  els.forEach(el => observer.observe(el));
+
 })();
 
+
+
 // =========================
-// CARROUSEL (Accueil)
+// BONUS 5 — CARROUSEL PREMIUM
 // =========================
 (function(){
+
   const root = document.querySelector("[data-carousel]");
   if(!root) return;
 
@@ -92,56 +136,158 @@ cards.forEach(card => {
   const slides = Array.from(root.querySelectorAll(".carousel-slide"));
   const prev = root.querySelector(".carousel-btn--prev");
   const next = root.querySelector(".carousel-btn--next");
-  const dots = Array.from(document.querySelectorAll(".carousel-dots .dot"));
+
+  let dots = Array.from(document.querySelectorAll(".carousel-dots .dot"));
 
   let index = 0;
   let timer = null;
 
-  function go(i){
-    index = (i + slides.length) % slides.length;
+
+
+  // Sécurité : créer dots si pas assez
+  const dotsContainer = document.querySelector(".carousel-dots");
+
+  if(dotsContainer && dots.length !== slides.length){
+
+    dotsContainer.innerHTML = "";
+
+    slides.forEach((_, i) => {
+
+      const dot = document.createElement("button");
+      dot.className = "dot";
+      if(i === 0) dot.classList.add("is-active");
+
+      dotsContainer.appendChild(dot);
+
+    });
+
+    dots = Array.from(dotsContainer.querySelectorAll(".dot"));
+
+  }
+
+
+
+  function update(){
+
     track.style.transform = `translateX(-${index * 100}%)`;
 
-    dots.forEach((d, k) => d.classList.toggle("is-active", k === index));
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("is-active", i === index);
+    });
+
   }
+
+
+
+  function go(i){
+
+    index = (i + slides.length) % slides.length;
+    update();
+
+  }
+
+
+
+  function nextSlide(){
+
+    go(index + 1);
+
+  }
+
+
 
   function start(){
+
     stop();
-    timer = setInterval(() => go(index + 1), 4500);
+    timer = setInterval(nextSlide, 5000);
+
   }
+
+
 
   function stop(){
-    if(timer) clearInterval(timer);
-    timer = null;
+
+    if(timer){
+      clearInterval(timer);
+      timer = null;
+    }
+
   }
 
-  prev.addEventListener("click", () => { go(index - 1); start(); });
-  next.addEventListener("click", () => { go(index + 1); start(); });
 
-  dots.forEach((d, i) => {
-    d.addEventListener("click", () => { go(i); start(); });
+
+  // Boutons
+  if(prev){
+    prev.addEventListener("click", () => {
+      go(index - 1);
+      start();
+    });
+  }
+
+  if(next){
+    next.addEventListener("click", () => {
+      go(index + 1);
+      start();
+    });
+  }
+
+
+
+  // Dots
+  dots.forEach((dot, i) => {
+
+    dot.addEventListener("click", () => {
+
+      go(i);
+      start();
+
+    });
+
   });
 
-  // Pause au survol
+
+
+  // Pause hover
   root.addEventListener("mouseenter", stop);
   root.addEventListener("mouseleave", start);
 
-  // Touch (mobile)
-  let x0 = null;
-  root.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive:true });
-  root.addEventListener("touchend", (e) => {
-    if(x0 === null) return;
-    const x1 = e.changedTouches[0].clientX;
-    const dx = x1 - x0;
-    x0 = null;
-    if(Math.abs(dx) > 40){
-      go(index + (dx < 0 ? 1 : -1));
+
+
+  // Touch mobile
+  let startX = null;
+
+  root.addEventListener("touchstart", e => {
+
+    startX = e.touches[0].clientX;
+
+  }, { passive: true });
+
+
+
+  root.addEventListener("touchend", e => {
+
+    if(startX === null) return;
+
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if(Math.abs(diff) > 40){
+
+      if(diff > 0) nextSlide();
+      else go(index - 1);
+
       start();
+
     }
+
+    startX = null;
+
   });
 
+
+
   // Init
-  go(0);
+  update();
   start();
+
 })();
-=======
->>>>>>> f939be4a7cd17f0e5ec54c9b0ac8ae26c03fb1c3

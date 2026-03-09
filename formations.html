@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=963, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EFREI - Formations</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,6 +22,7 @@
 
       <div class="nav-actions">
         <a class="pill" href="about.html">L’école</a>
+        <a class="pill" href="formations.html">Formations</a>
         <a class="pill" href="campus.html">Campus</a>
         <a class="pill" href="enseignants.html">Enseignants</a>
         <a class="pill" href="contact.html">Contact</a>
@@ -35,10 +37,10 @@
           aria-label="Recherche"
           required
         >
-        <button type="submit" class="search-btn" aria-label="Lancer la recherche">
+        <button type="submit" class="search-btn" aria-label="Rechercher">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M10.5 18a7.5 7.5 0 1 1 0-15" stroke="white" stroke-width="2"/>
-            <path d="M16.2 16.2 21 21" stroke="white" stroke-width="2"/>
+            <path d="M16.2 16.2 21 21" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
       </form>
@@ -62,6 +64,7 @@
         permettant aux étudiants de devenir des experts recherchés dans les domaines
         de l’ingénierie, du développement, de la data et de la cybersécurité.
       </p>
+
 
       <!-- ================= FORMATION 1 ================= -->
       <div class="formation-card" id="ge">
@@ -87,6 +90,7 @@
         <a href="#ge" class="pill">Voir détails</a>
       </div>
 
+
       <!-- ================= FORMATION 2 ================= -->
       <div class="formation-card" id="tn">
         <h2>Technologie &amp; Numérique</h2>
@@ -111,6 +115,7 @@
         <a href="#tn" class="pill">Voir détails</a>
       </div>
 
+
       <!-- ================= FORMATION 3 ================= -->
       <div class="formation-card" id="dm">
         <h2>Digital &amp; Management</h2>
@@ -134,6 +139,7 @@
 
         <a href="#dm" class="pill">Voir détails</a>
       </div>
+
 
       <!-- ================= FORMATION 4 ================= -->
       <div class="formation-card" id="exec">
@@ -172,7 +178,7 @@
       <div class="orient-grid">
 
         <div class="field">
-          <label>Votre objectif principal</label>
+          <label for="o_objectif">Votre objectif principal</label>
           <select id="o_objectif">
             <option value="">Choisir</option>
             <option value="tech">Je veux coder / construire des projets</option>
@@ -185,7 +191,7 @@
         </div>
 
         <div class="field">
-          <label>Votre niveau actuel</label>
+          <label for="o_niveau">Votre niveau actuel</label>
           <select id="o_niveau">
             <option value="">Choisir</option>
             <option value="bac">Bac / Terminale</option>
@@ -197,7 +203,7 @@
         </div>
 
         <div class="field">
-          <label>Votre préférence</label>
+          <label for="o_pref">Votre préférence</label>
           <select id="o_pref">
             <option value="">Choisir</option>
             <option value="long">Je veux un parcours complet</option>
@@ -221,6 +227,7 @@
 </main>
 
 
+<!-- Script orientation (gardé) -->
 <script>
   const objectif = document.getElementById("o_objectif");
   const niveau = document.getElementById("o_niveau");
@@ -297,43 +304,73 @@
     result.textContent = "";
   });
 </script>
+
 <script src="bonus.js"></script>
-</body>
 
+
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-grid">
 
-    <div class="footer-logo-block">
-      <img src="assets/image 1.png" class="footer-logo" alt="Logo EFREI">
-      <ul>
-        <li>+33 188 289 000</li>
-        <li>Dernière mise à jour : 2026</li>
-      </ul>
-    </div>
+  <div class="container">
 
-    <div>
-      <h4>L’école</h4>
-      <ul>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="campus.html">Campus</a></li>
-      </ul>
-    </div>
+    <div class="footer-grid">
 
-    <div>
-      <h4>Formations</h4>
-      <ul>
-        <li><a href="formations.html">Voir formations</a></li>
-      </ul>
-    </div>
+      <!-- Bloc logo + projet -->
+      <div class="footer-logo-block">
 
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="contact.html">Nous contacter</a></li>
-      </ul>
+        <img src="assets/image 1.png" class="footer-logo" alt="Logo EFREI">
+
+        <ul>
+          <li>+33 188 289 000</li>
+
+          <li class="update">Dernière mise à jour</li>
+          <li>10/02/2026</li>
+
+          <li class="update">
+            Projet réalisé par
+            <a href="equipe.html" class="footer-link">
+              Sean MOY et Duy Minh PHUNG
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <!-- Colonne école -->
+      <div>
+        <h4>L’école</h4>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="campus.html">Campus</a></li>
+          <li><a href="equipe.html">Notre équipe</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Colonne formations -->
+      <div>
+        <h4>Formations</h4>
+        <ul>
+          <li><a href="formations.html">Voir formations</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Colonne contact -->
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Nous contacter</a></li>
+          <li><a href="equipe.html">Infos développeurs</a></li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
+
 </footer>
 
+</body>
 </html>
