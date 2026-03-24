@@ -1,12 +1,6 @@
-<!doctype html>
-<html lang="fr">
+<?php include 'includes/header.php'; ?>
+<?php include 'includes/navigation.php'; ?>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EFREI - Équipe enseignante</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 
 <body>
 
@@ -336,65 +330,5 @@ render();
 
 
 
-<!-- FOOTER STANDARD -->
-<footer class="footer">
 
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div class="footer-logo-block">
-
-        <img src="assets/image 1.png" class="footer-logo" alt="Logo EFREI">
-
-        <ul>
-          <li>+33 188 289 000</li>
-
-          <li class="update">Dernière mise à jour</li>
-          <li>10/02/2026</li>
-
-          <li class="update">
-            Projet réalisé par
-            <a href="equipe.html" class="footer-link">
-              Sean MOY et Duy Minh PHUNG
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-
-      <div>
-        <h4>L’école</h4>
-        <ul>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="campus.html">Campus</a></li>
-          <li><a href="equipe.html">Notre équipe</a></li>
-        </ul>
-      </div>
-
-
-      <div>
-        <h4>Formations</h4>
-        <ul>
-          <li><a href="formations.html">Voir formations</a></li>
-        </ul>
-      </div>
-
-
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="contact.html">Nous contacter</a></li>
-          <li><a href="equipe.html">Infos développeurs</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-  </div>
-
-</footer>
-
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
